@@ -1,0 +1,21 @@
+#include <stdio.h>
+#include <alloc.h>
+
+void main()
+{int n,size,*arr;
+clrscr();
+printf("Enter the size:");
+scanf("%d",&size);
+
+arr = (int *) malloc(2*size);
+
+for(n=0;n<size;n++)
+  {printf("Enter the element no. %d: ",n+1);
+   scanf("%d",&arr[n]);
+  }
+for(n=0;n<size;n++)
+ {
+  printf("Element no. %d is :",arr[n]);
+ }
+getch();
+}
