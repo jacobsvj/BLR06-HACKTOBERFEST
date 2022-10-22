@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+void main()
+{
+ int arr[20],size,beg,end,mid,flag,elt;
+
+ printf("\nEnter the size of the array :");
+ scanf("%d",&size);
+ printf("Elements should be entered in increasing order :");
+ for(i=0;i<size;i++)
+  scanf("%d",arr[i]);
+
+ beg=0,end=size-1;flag=1;
+
+ printf("Enter the search element :");
+ scanf("%d",&elt);
+
+ while(beg<=end)
+ {
+  mid = (beg+end)/2;
+  if(arr[mid]==elt)
+  {
+  printf("The element is found at %d location ",mid+1);
+  flag=0;
+  break;
+  }
+ if(arr[mid]>elt)
+  end=mid-1;
+ if(arr[mid]<elt)
+ beg=mid+1;
+ if(flag)
+ printf("Search unsccessful");
+ }
+}
