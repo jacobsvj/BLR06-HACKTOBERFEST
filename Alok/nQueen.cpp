@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 int check[100], col_series[100];
-int c = 0;
 void print(int n)
 {
     c++;
@@ -10,7 +9,7 @@ void print(int n)
     cout << endl
          << endl;
 }
-void nQueen(int row, int col, int n)
+void nQueen(int row, int n)
 {
     for (int j = 0; j < n; j++)
     {
@@ -39,7 +38,7 @@ void nQueen(int row, int col, int n)
         else
         {
             check[j] = 1;
-            nQueen(row + 1, j, n);
+            nQueen(row + 1, n);
             check[j] = 0;
         }
     }
@@ -49,9 +48,7 @@ int main()
     int n;
     cout << "No. of queens: ";
     cin >> n;
-    nQueen(0, -2, n);
-
-    cout << c;
+    nQueen(0, n);
 
     return 0;
 }
