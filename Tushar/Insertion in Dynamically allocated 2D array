@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <alloc.h>
+#include <conio.h>
+void main()
+{int n,size,*arr,pos,emt;
+clrscr();
+printf("Enter the size:");
+scanf("%d",&size);
+size++;
+arr = (int *) malloc(2*size);
+for(n=0;n<size-1;n++)
+  {
+   printf("Enter the element no. %d: ",n+1);
+   scanf("%d",&arr[n]);
+  }
+printf("\nEnter the position:");
+scanf("%d",&pos);
+printf("\nEnter the element:");
+scanf("%d",&emt);
+for(n=size;n>=pos;n--)
+ {
+  arr[n]=arr[n-1];
+ }
+ arr[pos-1] = emt;
+for(n=0;n<size;n++)
+ {
+  printf("The element no. %d is : %d\n",n+1,arr[n]);
+ }
+getch();
+}
