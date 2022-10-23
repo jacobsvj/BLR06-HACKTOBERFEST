@@ -1,0 +1,88 @@
+#include <stdio.h>
+#include <conio.h>
+#include <alloc.h>
+
+void readmatrix(int** ,int,int);
+void addmatrix(int**,int**,int**,int,int);
+void multiplymatrix(int**,int**,int**,int,int);
+void printmatrix(int**,int,int);
+
+void main()
+{
+ int **arr1,**arr2,**arr3,**arr4,row1,col1,row2,col2,i;
+ printf("\nEnter no. of rows and columns of first matrix");
+ scanf("%d",&row1);
+ scanf("%d",&col1);
+ printf("\nEnter no. of rows and columns of second matrix");
+ scanf("%d",&row2);
+ scanf("%d",&col2);
+
+ arr1 = (int **)malloc(sizeof(int)*row1);
+
+ for(i=0;i<row1;i++)
+ arr1[i]=(int *)malloc(sizeof(int)*col1);
+
+ arr2 = (int **)malloc(sizeof(int)*row2);
+
+ for(i=0;i<row2;i++)
+ arr2[i]=(int *)malloc(sizeof(int)*col2);
+
+ arr3 = (int **)malloc(sizeof(int)*row1);
+ for(i=0;i<row1;i++)
+ arr3[i]=(int *)malloc(sizeof(int)*col2);
+
+ readmatrix(arr1,row1,col1);
+ readmatrix(arr2,row2,col2);
+ addmatrix(arr1,arr2,arr3,row1,col1);
+ printmatrix(arr1,row1,col1);
+ printf("\n");
+ printmatrix(arr2,row2,col2);
+ printf("\n");
+ printmatrix(arr3,row1,col1);
+// multiplymatrix(arr1,arr2,row1,col2);
+// printmatrix(arr4,row1,col2);
+ getch();
+}
+
+void readmatrix(int **ptr,int row,int col)
+{
+ int i,j;
+ printf("\nEnter the elements:");
+ for(i=0;i<row;i++)
+ {
+  for(j=0;j<col;j++)
+  {
+  scanf("%d",&ptr[i][j]);
+  }
+ }
+}
+
+void printmatrix(int **ptr,int row,int col)
+{
+ int i,j;
+ for(i=0;i<row;i++)
+ {
+  for(j=0;j<col;j++)
+  {
+  printf("%d  ",ptr[i][j]);
+  }
+  printf("\n");
+ }
+}
+
+void addmatrix(int **ptr1,int **ptr2,int **ptr3,int row,int col)
+{
+ int i,j;
+ for(i=0;i<row;i++)
+ {
+  for(j=0;j<col;j++)
+  {
+  ptr3[i][j] = ptr1[i][j]+ptr2[i][j];
+  }
+ }
+}
+
+/*void multiplymatrix(int **ptr1,int **ptr2,int **ptr3,int row,int col)
+{
+
+}*/
