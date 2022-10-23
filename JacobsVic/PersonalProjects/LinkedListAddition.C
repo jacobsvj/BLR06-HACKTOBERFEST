@@ -1,7 +1,7 @@
-#include<stdio.h>
-#include<conio.h>
-#include<alloc.h>
-#include<stdlib.h>
+#include<stdio>
+#include<conio>
+#include<alloc>
+#include<stdlib>
 void display();
 struct link
 {
