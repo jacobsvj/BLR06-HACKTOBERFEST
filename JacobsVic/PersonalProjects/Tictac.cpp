@@ -1,6 +1,6 @@
-#include<iostream.h>
-#include<conio.h>
-#include<stdlib.h>
+#include<iostream>
+#include<conio>
+#include<stdlib>
 int x,y,i,j,e,f,k,u,r,count;
 int a[3][3];
 char *player1,*player2;
