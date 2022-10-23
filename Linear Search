@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+void main()
+{
+int arr[10],elt,i,flag=0,loc=0;
+printf("Enter the array :");
+for(i=0;i<10;i++)
+scanf("%d",&arr[i]);
+printf();
+scanf();
+for(i=0;i<10;i++)
+{
+if(elt=a[i])
+{
+check=1;
+loc=i;
+break;
+}
+}
+if(check==0)
+printf("Element does not exist");
+else
+{
+printf("Element found");
+printf("\nLocation of the element is %d",loc+1);
+}
